@@ -9,5 +9,4 @@ class KopringLabApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }

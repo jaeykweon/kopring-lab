@@ -6,6 +6,8 @@ plugins {
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
     kotlin("plugin.jpa") version "1.6.21"
+
+    id("org.jlleitschuh.gradle.ktlint") version "11.1.0"
 }
 
 group = "org.idd"
@@ -29,13 +31,20 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = "17"
-    }
-}
+tasks {
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+    withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs += "-Xjsr305=strict"
+            jvmTarget = "17"
+        }
+    }
+
+    withType<Test> {
+        useJUnitPlatform()
+    }
+
+    ktlint {
+        verbose.set(true)
+    }
 }
