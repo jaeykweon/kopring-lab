@@ -1,4 +1,4 @@
-package org.idd.kopringlab.`object`
+package org.idd.kopringlab.classtest
 
 import javax.annotation.PostConstruct
 
@@ -28,7 +28,7 @@ open class FirstClass {
         @PostConstruct
         @JvmStatic
         fun firstClassCompanionObjectPostConstruct() {
-            println("7. FirstClass companion object postConstruct")
+            println("6. FirstClass companion object postConstruct")
         }
     }
 }

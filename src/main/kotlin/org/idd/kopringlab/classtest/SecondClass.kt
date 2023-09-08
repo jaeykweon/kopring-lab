@@ -1,4 +1,4 @@
-package org.idd.kopringlab.`object`
+package org.idd.kopringlab.classtest
 
 import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
@@ -12,7 +12,7 @@ class SecondClass : FirstClass() {
 
     @PostConstruct
     fun secondPostConstruct() {
-        println("8. SecondClass postConstruct")
+        println("7. SecondClass postConstruct")
     }
 
     companion object {
@@ -23,7 +23,7 @@ class SecondClass : FirstClass() {
         @PostConstruct
         @JvmStatic
         fun secondClassCompanionObjectPostConstruct() {
-            println("9. SecondClass companion object postConstruct")
+            println("7. SecondClass companion object postConstruct")
         }
     }
 }
